@@ -14,7 +14,7 @@ de introdução à programação, para os quais conceitos tão sedimentados são
 vezes esquecidos. Por outro lado, manuais pedagógicos de programação podem
 frequentemente ser morosos ou substimar o conhecimento prévio matemático do leitor.
 
-E nem sempre é fácil aprender programação por tentativa e erro quandonão há tempo,
+E nem sempre é fácil aprender programação por tentativa e erro quando não há tempo,
 ou especial motivação.
 
 Assim, nesta sebenta pretende-se fazer uma introdução prática aos conceitos
@@ -22,7 +22,7 @@ fundamentais de programação, procurando não esquecer que o conhecimento prév
 sobretudo na área da matemática, e que se pretende adquirir sobretudo
 conhecimento prático.
 
-Pague-me um café em `http://ko-fi.com/A776VK1` :)
+Pague-me um café em [`http://ko-fi.com/A776VK1`](http://ko-fi.com/A776VK1) :)
 
 ## O Que é uma Linguagem de Programação
 
@@ -48,7 +48,7 @@ ou criar comportamentos complexos (simulação, jogos).
 >a sua instalação não é de Python 2**.
 >
 >Para isso, abra uma linha de comandos (Windows) ou terminal (MacOS, Linux)
->e escreva `python` (seguido de `enter`).
+>e escreva `python` (carregando `enter`).
 >Se uma instalação já estiver presente, poder-se-á ler a versão instalada
 >na máquina; caso contrário dever-se-á observar um erro.
 
@@ -153,6 +153,23 @@ a = 3 # Todo o texto seguinte é ignorado.
 Ao longo deste texto, comentários serão também usados como acima, isto é, para adicionar
 informação contextualmente, sem que se deva atribuir valor programático ao texto.
 
+## Operações Aritméticas
+
+Estão definidas os seguintes operadores aritméticos em Python:
+
++ `+` - soma
++ `-` - subtração
++ `*` - multiplicação
++ `/` - divisão
++ `%` - módulo; se `r` for a parte inteira de `a/b`, então `b = r + b%a` (resulta
+ no "resto" da divisão).
++ `**` - expoente; `a**b` significa `a` levantado a `b`.
++ `//` - *floor division*; parte inteira de uma divisão, tal que `b = b//a + b%a`.
+
+É de notar que muitas das vezes estes operadores estão definidos para
+entidades que não numéricas; ver-se-á mesmo que é possível definir o resultado
+destas operações para [tipos](#tipos-types) originais.
+
 ## Tipos (*Types*)
 
 >A secção que se segue poderá ser intimidadora ou morosa numa primeira aproximação;
@@ -197,6 +214,15 @@ ser acedido pelo seu índice, como elementos da `string`.
 'h'
 ```
 
+Além disso, `string`s podem ser somados, e até multiplicados:
+
+```python
+>>> 'some' + ' ' + 'text'
+'some text'
+>>> 'spam' * 3
+'spamspamspam'
+```
+
 ### Int (*inteiro*, *integer*)
 
 Como o nome indica, um `int` é o tipo correspondente a valores inteiros.
@@ -227,6 +253,9 @@ abordada na seccção [referente a memória](#valores-e-memória).
 >No entanto, esta matéria é por vezes introduzida no início do semestre, pelo
 >que o capítulo correspondente procura ser auto-contido e pode ser lido desde já.
 
+`int`s (e [`float`s](#float-floating-point-ponto-flutuante) ) operam aritmeticamente
+como esperado para valores numéricos.
+
 ### Float (*floating point*, *ponto flutuante*)
 
 O tipo `float` também representa um número mas como o nome *ponto flutuante* indica,
@@ -245,8 +274,8 @@ Pode ser declarado explicitamente, ou resultar da divisão de dois `int`s:
 0.6
 ```
 
-É de notar, ainda, que a soma de um `int` com um `float` resulta ainda num `float`
-(como esperado):
+É de notar, ainda, que de operações entre um [`int`](#int-inteiro-integer) e um `float`
+resulta ainda num `float` (como esperado):
 
 ```python
 >>> 1.513 + 2
@@ -303,13 +332,24 @@ Erro
 [0, 2, 3]
 ```
 
+Listas podem ser somadas, ou multiplicadas, com resultados semelhantes
+aos que se obtêm para [`string`s](#string-fio-de-letras):
+
+```python
+>>> [1, 2, 3] + ['a', 5]
+[1, 2, 3, 'a', 5]
+>>> ['lovely', 'spam'] * 3
+['lovely', 'spam', 'lovely', 'spam', 'lovely', 'spam']
+```
+
 ### Tuple (*tupla*)
 
 Uma tupla é semelhante a uma lista, mas cujos elementos são imutáveis, isto
 é, não podem ser alterados.
 
-É delimitada por parêntesis curvos (`( )`), sendo que se define uma tupla vazia
-como `(,)`, a fim de desambiguar de uma expressão entre parêntesis.
+É delimitada por parêntesis curvos (`( )`), sendo que se define uma tupla
+vazia/de um só elemento como `(,)`/`(x,)`, a fim de desambiguar de uma expressão
+entre parêntesis.
 
 Os elementos numa tupla podem ser de qualquer tipo (incluindo outras tuplas),
 sendo separados por vírgulas.
@@ -327,6 +367,16 @@ Por exemplo:
 ('b', 2)
 >>> x[2][0]
 'b'
+```
+
+Tuplas apresentam resultados muito semelhantes aos que se obtêm
+para `string`s e `list`s, quando operadas aritmeticamente:
+
+```python
+>>> (1, 'a') + ('c',)
+(1, 'a', 'c')
+>>> ('p', 'b', 'x') * 3
+('p', 'b', 'x', 'p', 'b', 'x', 'p', 'b', 'x')
 ```
 
 ### Set (*conjunto*)
@@ -348,6 +398,9 @@ Por exemplo:
 >>> {1,1,1}
 {1}
 ```
+
+>`Set`s não podem ser operados aritmeticamente, tendo de se usar as suas
+>funções internas; tratar-se-á este caso mais à frente.
 
 ### Dictionary (*dicionário*)
 
@@ -385,9 +438,12 @@ Acede-se aos valores pela chave correspondente, sendo que a sintaxe corresponden
 Por razões óbvias, as chaves deverão ser únicas (pois a referência a um valor tornar-se-ia
 ambígua), mas não há qualquer restrição aos valores.
 
-### Exercícios
+>Dicionários não podem ser operados aritmeticamente, simplesmente porque
+>tal não tem uma interpretação lógica consistente.
 
-#### 1. Como representar uma lista telefónica
+### Exemplo
+
+#### Como representar uma lista telefónica
 
 Um dicionário é frequentemente comparado com uma lista telefónica. Suponhamos os
 seguintes nomes e números:
@@ -459,7 +515,76 @@ ou carregando `F5`.
 
 ## Funções
 
-TODO
+Apesar do nome, num contexto de programação, *função* toma um significado
+diferente (sendo por vezes designada por *método* ou *rotina*).
+
+Trata-se de uma aplicação, à qual, quando é passada um número de *argumentos*,
+(i.e., parâmetros), toma um valor resultante, indicado pela *keyword* `return`.
+
+Em Python, uma função `cube_plus_sum` poderia ser definida da seguinte forma:
+
+```python
+def cube_plus_sum(a, b):
+    x = b**3
+    return x + a
+```
+
+Observa-se que:
+
++ O conteúdo da função encontra-se delimitado
+ por um tab (ou 4 espaços) no início de cada linha.
++ Um argumento funciona como uma variavel valida apenas dentro
+ da função, cujo valor é definido quando a função é chamada.
+
+Existe um número de funções pre-definidas em Python. Uma das mais importantes
+será a função `print`, que dado um qualquer número de parâmetros, os imprime.
+
+Por exemplo:
+
+```python
+def cube_plus_sum(a, b):
+    return b**3 + a
+
+print( cube_plus_sum(2, 4) )
+```
+
+Correndo o exemplo acima, observa-se de *output*:
+
+```python
+66
+```
+
+## Casting
+
+Por vezes, faz sentido interpretar um tipo como um tipo diferente.
+
+O caso mais óbvio será o de operar sobre um número dado como `string`.
+
+Suponhamos que, dado uma variável do tipo `string`, `x`, contendo um número,
+procuramos obter o seu triplo.
+
+Como [visto antes](#string-fio-de-letras), não é possível multiplicar o valor
+diretamente:
+
+```python
+>>> x = '3'
+>>> x*3
+'333'
+```
+
+Não só o resultado é incorreto, ainda se encontra no formato de `string`!
+
+Devemos então converter o valor dado para o tipo correto esperado -- chama-se
+a este processo *casting* (atirar - de um tipo para outro). Em Python, basta
+para tal chamar o tipo de destino como função, passando-lhe o valor a
+converter:
+
+```python
+>>> x = '3'
+>>> y = int(x)
+>>> y * 3
+9
+```
 
 ## Valores e Memória
 

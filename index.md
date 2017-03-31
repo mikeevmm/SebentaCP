@@ -535,6 +535,8 @@ Observa-se que:
  por um tab (ou 4 espaços) no início de cada linha.
 + Um argumento funciona como uma variavel valida apenas dentro
  da função, cujo valor é definido quando a função é chamada.
++ O nome de uma função deve obedecer às mesmas regras que
+ [variáveis](#variável-variable).
 
 Existe um número de funções pre-definidas em Python. Uma das mais importantes
 será a função `print`, que dado um qualquer número de parâmetros, os imprime.
@@ -552,6 +554,36 @@ Correndo o exemplo acima, observa-se de *output*:
 
 ```python
 66
+```
+
+>A função `print` é verdadeiramente útil, pelo que se constata ainda que:
+>
+> + `print` imprime vários elementos separados por um espaço, quando
+>  separados por vírgulas
+> + Dois `print`s consecutivos encontram-se separados por um parágrafo,
+>  salvo se o último elemento do primeiro `print` se encontrar precedido
+>  por uma vírgula
+
+Uma função pode ainda não devolver qualquer valor, sendo utilizada para
+representar uma ação composta efetuada várias vezes (reduzindo assim a
+repetição de código e tornando o mesmo mais fácil de manter).
+
+```python
+def print_equivalent_resistance(a,b):
+    equiv = a * b / (a + b)
+    print("The equivalent resistance of", a, "in parallel with", b, 'is', equiv)
+
+print_equivalent_resistance(5,10)
+print_equivalent_resistance(1,1)
+print_equivalent_resistance(12,3)
+```
+
+Com output
+
+```text
+The equivalent resistance of 5 in parallel with 10 is 3.3333333333333335
+The equivalent resistance of 1 in parallel with 1 is 0.5
+The equivalent resistance of 12 in parallel with 3 is 2.4
 ```
 
 ## Casting
@@ -584,6 +616,13 @@ converter:
 >>> y = int(x)
 >>> y * 3
 9
+```
+
+Podemos converter o resultado de volta para `string`:
+
+```python
+>>> str(y) * 3
+999
 ```
 
 ## Valores e Memória

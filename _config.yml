@@ -1,2 +1,9 @@
 theme: jekyll-theme-midnight
 markdown: kramdown
+highlighter: rouge
+paginate: 5
+
+kramdown:
+   input: GFM
+   hard_wrap: false
+   # syntax_highlighter: rouge

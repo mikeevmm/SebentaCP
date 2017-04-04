@@ -662,6 +662,19 @@ dígitos, onde cada dígito `d` de índice `i` tem o valor:
 
 $$ d*b^i $$
 
+O aparelho descrito acima tem, portanto a capacidade de descrever qualquer valor
+(inteiro, positivo):
+
+```text
+Binário         Decimal
+0       ----->  0
+1       ----->  1
+10      ----->  2
+11      ----->  3
+100     ----->  4
+         ...
+```
+
 ## Apêndices
 
 ### Hashable Elements

@@ -506,7 +506,8 @@ A estes ficheiros é dado o nome `script`.
 
 Um script de Python é qualquer ficheiro com a terminação `.py`.
 
-Na prática, é comum recorrer ao IDLE para escrever scripts.
+Na prática, é comum recorrer ao IDLE, o editor de texto incluido com
+a instalação oficial de pythom para escrever scripts.
 `File > New File` cria um novo ficheiro, que pode ser guardado em
 qualquer local. Este pode depois ser corrido em `Run > Run Module`,
 ou carregando `F5`.
@@ -622,12 +623,47 @@ Podemos converter o resultado de volta para `string`:
 
 ```python
 >>> str(y) * 3
-999
+'999'
 ```
 
 ## Valores e Memória
 
-TODO
+Um computador, de uma forma reducionista, pode ser tomado como um conjunto
+de lâmpadas em série. Cada uma destas lâmpadas poderá estar ligada ou desligada,
+pelo que, associando `1` a ligado e `0` a desligado, cada estado da máquina
+pode ser caracterizado por uma sequência de `1`s e `0`s.
+
+O acima descrito trata-se de uma ilustração de um sistema binário, que matematicamente
+pode ser bem descrito; trata-se, de facto, apenas de um sistema em base 2.
+
+A noção de sistema de numeração é fácil de entender, observando a base decimal.
+Suponhamos o número `9213`.
+
+>Apelando ao ensino primário...
+
+Temos que este número é composto por `3` unidades, `1` dezena, `2` centenas e
+`9` milhares. Atribuindo a cada uma destas categorias um índice, começando em
+zero, então observa-se que
+
+$$ 9213 = 3*10^0 + 1*10^1 + 2*10^2 + 9*10^9 $$
+
+De facto, no sistema decimal, cada dígito tem 10 estados possíveis, `0...9`,
+e cada número é dado como uma soma de termos do tipo
+
+\$$ d * 10^i $$
+
+, onde `i` é o índice do dígito. Por isso se diz que o sistema de numeração
+decimal é **base 10**.
+
+Note-se ainda que esta lógica se extende para decimais:
+
+$$ 0.314 = 0*10^0 + 3*10^{-1} + 1*10^{-2} + 4*10^{-3} $$
+
+Assim, uma mudança de sistema de numeração (normalmente dito mudança de base),
+para uma base `b` consiste apenas na representação de números usando `0...b`
+dígitos, onde cada dígito `d` de índice `i` tem o valor:
+
+$$ d*b^i $$
 
 ## Apêndices
 

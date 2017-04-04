@@ -1,5 +1,3 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
 # Introdução Fundamental À Programação
 
 ## Introdução
@@ -650,10 +648,7 @@ zero, então observa-se que
 $$ 9213 = 3*10^0 + 1*10^1 + 2*10^2 + 9*10^9 $$
 
 De facto, no sistema decimal, cada dígito tem 10 estados possíveis, `0...9`,
-e cada número é dado como uma soma de termos do tipo
-
-\$$ d * 10^i $$
-
+e cada número é dado como uma soma de termos do tipo \$$ d * 10^i $$
 , onde `i` é o índice do dígito. Por isso se diz que o sistema de numeração
 decimal é **base 10**.
 
@@ -697,3 +692,6 @@ se verifica para objetos mutáveis, este processo é impossível, pelo que se
 justifica que não possam ser chaves em dicionários.
 
 [Mais informação sobre Hash Functions.](https://en.wikipedia.org/wiki/Hash_function)
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+type="text/javascript"></script>

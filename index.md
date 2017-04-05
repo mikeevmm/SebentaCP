@@ -164,7 +164,7 @@ Estão definidas os seguintes operadores aritméticos em Python:
 + `%` - módulo; se `r` for a parte inteira de `a/b`, então `b = r + b%a` (resulta
  no "resto" da divisão).
 + `**` - expoente; `a**b` significa `a` levantado a `b`.
-+ `//` - *floor division*; parte inteira de uma divisão, tal que `b = b//a + b%a`.
++ `//` - *floor division*; parte inteira de uma divisão, tal que `b = a*(b//a) + b%a`.
 
 É de notar que muitas das vezes estes operadores estão definidos para
 entidades que não numéricas; ver-se-á mesmo que é possível definir o resultado
@@ -674,6 +674,9 @@ Binário         Decimal
 100     ----->  4
          ...
 ```
+
+Claro que para representar números maiores, serão necessários mais dígitos;
+mais *bits*
 
 ## Apêndices
 

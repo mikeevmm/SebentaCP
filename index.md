@@ -1,5 +1,3 @@
-# Introdução Fundamental À Programação
-
 ## Introdução
 
 Em geral, aprender os princípios de porgramação é um processo de tentativa e erro.
@@ -11,7 +9,8 @@ ou física já há muito se ultrapassaram os conceitos algébricos básicos.
 
 No entanto, por vezes este facto pode ser esquecido na introdução à programação;
 por outro lado, manuais pedagógicos de programação podem
-frequentemente ser morosos ou substimar o conhecimento prévio matemático do leitor.
+frequentemente ser morosos ou substimar (ou sobrestimar) o conhecimento prévio
+matemático do leitor.
 
 E nem sempre é fácil aprender programação por tentativa e erro quando não há tempo,
 ou especial motivação.
@@ -20,7 +19,8 @@ Assim, nesta sebenta pretende-se fazer um apanhado dos conhecimentos mais essenc
 de programação, podendo funcionar como uma referência que pode também ser seguida
 do princípio ao fim.
 
->Paga-me um café em [`http://ko-fi.com/mikeevmm`](http://ko-fi.com/mikeevmm) :)
+>Pague-me um café em **[`http://ko-fi.com/mikeevmm`](http://ko-fi.com/mikeevmm)**
+>:)
 
 ## O Que é uma Linguagem de Programação
 
@@ -43,7 +43,7 @@ ou criar comportamentos complexos (simulação, jogos).
 ## O Que é Python e Como o Instalar
 
 >Este capítulo é irrelevante se já tiver instalado `Python`, **verificando que
->a sua instalação não é de Python 2**.
+>a instalação não é de Python 2**.
 >
 >Para isso, abra uma linha de comandos (Windows) ou terminal (MacOS, Linux)
 >e escreva `python` (carregando `enter`).
@@ -55,8 +55,9 @@ principiantes pela sua sintaxe próxima do inglês, e abstração de operações
 ou seja, pelo facto de muitas operações comuns de realizar (e por vezes não
 triviais de implementar) estarem já embutidas na língua.
 
-Apesar disso, é extremamente poderosa, sendo por isso muito utilizada por académicos, hacker,
- ou para prototipar ou desenvolver ferramentas (onde a performance
+Apesar disso, é extremamente poderosa, sendo por isso muito
+utilizada por académicos, hackers,
+ou para prototipar ou desenvolver ferramentas (onde a performance
 não é crítica).
 
 Prolongando o paralelismo entre Python e uma linguagem comum, é necessário
@@ -311,7 +312,7 @@ Uma lista pode ser descrita como um conjunto **ordenado** de elementos, que
 Trata-se de um conceito fundamental na programação, sendo que muitos exercícios dependem
 fundamentalmente do conceito de lista.
 
-Uma lista, sintáticamente, é delimitada por dois parentesis retos (`[ ]`), e os seus
+Uma lista, sintaticamente, é delimitada por dois parentesis retos (`[ ]`), e os seus
 elementos são separados por vírgulas. Estes elementos podem ser de qualquer tipo,
 sendo que uma lista pode conter elementos de diferentes tipos (incluindo listas),
 ou outras variáveis.
@@ -511,6 +512,8 @@ Supondo que este dicionário se encontra atribuido à variável `d`,
 263779913
 ```
 
+---
+
 ## Scripts
 
 >A noção de *script* não pertence especificamente a Python, nem é necessariamente
@@ -535,8 +538,6 @@ a instalação oficial de python para escrever scripts.
 qualquer local. Este pode depois ser corrido em `Run > Run Module`,
 ou carregando `F5`.
 
----
-
 ## Funções
 
 Apesar do nome, num contexto de programação, *função* toma um significado
@@ -557,7 +558,7 @@ Observa-se que:
 
 + O conteúdo da função encontra-se delimitado
  por um *tab* (ou 4 espaços) no início de cada linha.
-+ Um argumento funciona como uma variavel valida apenas dentro
++ Um argumento funciona como uma variável valida apenas dentro
  da função, cujo valor é definido quando a função é chamada.
 + O nome de uma função deve obedecer às mesmas regras que
  [variáveis](#variável-variable).
@@ -681,7 +682,7 @@ Temos que este número é composto por `3` unidades, `1` dezena, `2` centenas e
 `9` milhares. Atribuindo a cada uma destas categorias um índice, começando em
 zero, então observa-se que
 
-$$ 9213 = 3\*10^0 + 1\*10^1 + 2\*10^2 + 9\*10^9 $$
+$$ 9213 = 3  \cdot  10^0 + 1 \cdot 10^1 + 2 \cdot 10^2 + 9 \cdot 10^9 $$
 
 De facto, no sistema decimal, cada dígito tem 10 estados possíveis, `0...9`,
 e cada número é dado como uma soma de termos do tipo \$$ d * 10^i $$
@@ -690,7 +691,7 @@ decimal é **base 10**.
 
 Note-se ainda que esta lógica se extende para decimais:
 
-$$ 0.314 = 0\*10^0 + 3\*10^{-1} + 1\*10^{-2} + 4\*10^{-3} $$
+$$ 0.314 = 0 \cdot 10^0 + 3 \cdot 10^{-1} + 1 \cdot 10^{-2} + 4 \cdot 10^{-3} $$
 
 Assim, uma mudança de sistema de numeração (normalmente dito mudança de base),
 para uma base `b` consiste apenas na representação de números usando `0...b`
